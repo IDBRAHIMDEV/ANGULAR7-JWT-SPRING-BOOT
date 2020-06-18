@@ -1,0 +1,53 @@
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">New Address</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="addressForm" (ngSubmit)="createAddress()">
+      <div class="modal-body">
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input formControlName="city" type="text" class="form-control" id="city">
+          </div>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input formControlName="street" type="text" class="form-control" id="street">
+          </div>
+          <div class="form-group">
+            <label for="postal">Postal</label>
+            <input formControlName="postal" type="text" class="form-control" id="postal">
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input formControlName="country" type="text" class="form-control" id="country">
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label mr-5">
+              <input formControlName="type" type="radio" class="form-check-input" value="Shipping" checked>
+              Shipping
+            </label>
+
+            <label class="form-check-label">
+              <input formControlName="type" type="radio" class="form-check-input" value="Billing" checked>
+              Billing
+            </label>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

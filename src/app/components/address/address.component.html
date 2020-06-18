@@ -1,0 +1,17 @@
+
+<div class="card border-primary mt-3">
+  <div class="card-body">
+    <h3 class="card-title">Type : {{ address.type }}</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <strong>City : </strong> {{ address.city }}</li>
+    <li class="list-group-item"><strong>Street : </strong> {{ address.street }}</li>
+    <li class="list-group-item"><strong>Postal : </strong> {{ address.postal }}</li>
+    <li class="list-group-item"><strong>Country : </strong> {{ address.country }}</li>
+    <li class="list-group-item text-center">
+
+      <button class="btn btn-primary mr-2">Edit</button>
+      <button class="btn btn-dark mr-2">Delete</button>
+    </li>
+  </ul>
+</div>

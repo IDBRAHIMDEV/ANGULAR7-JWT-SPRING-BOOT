@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/bootswatch/dist/journal/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootswatch/dist/jquery.js",
+              "./node_modules/bootswatch/dist/bootstrap.min.js",
+              "./node_modules/bootswatch/dist/script.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spring-angular"
+    }
+  },
+  "defaultProject": "spring-angular",
+  "cli": {
+    "analytics": false
+  }
 }

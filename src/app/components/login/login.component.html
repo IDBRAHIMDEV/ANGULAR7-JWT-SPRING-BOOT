@@ -1,0 +1,52 @@
+
+<div class="row mt-5">
+  <div class="col-md-6 mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          type="text"
+          [ngClass]="{
+            'is-valid': loginForm.get('email').valid,
+            'is-invalid': loginForm.get('email').invalid  && (loginForm.get('email').touched || loginForm.get('email').dirty)
+          }"
+          class="form-control"
+          id="email"
+        >
+
+        <div
+          *ngIf="loginForm.get('email').invalid && (loginForm.get('email').touched || loginForm.get('password').dirty)"
+          Class="invalid-feedback"
+        >
+          <div *ngIf="loginForm.get('email').getError('required')">Email is Required !</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          [ngClass]="{
+            'is-valid': loginForm.get('password').valid,
+            'is-invalid': loginForm.get('password').invalid  && (loginForm.get('password').touched || loginForm.get('password').dirty)
+          }"
+          class="form-control"
+          id="password"
+        >
+
+        <div
+          *ngIf="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)"
+          Class="invalid-feedback"
+        >
+          <div *ngIf="loginForm.get('password').getError('required')">Password is Required !</div>
+          <div *ngIf="loginForm.get('password').getError('minlength')">Password was to be 8 Caracters !</div>
+        </div>
+      </div>
+
+      <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block">Sign In</button>
+    </form>
+  </div>
+</div>
